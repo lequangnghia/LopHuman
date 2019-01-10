@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var Apple = function () {
+        this.setWeightApple = function (weight) {
+        this.weightapple = weight;
+        };
+            this.getWeightApple = function () {
+            return this.getWeightApple;
+        };
+        this.decrease = function () {
+            if (this.weightapple > 0) {
+                this.weightapple--;
+            }
+        };
+        this.checkApple = function () {
+          if(this.weightApple == 0){
+              alert("No Eat");
+          } else {
+              alert("Eat: " +this.weightApple)
+          }
+        };
+    }
+    var time = 1;
+    var Human = function () {
+        this.setName = function (name) {
+            this.name = prompt("Ten: ");
+
+        };
+        this.getName = function () {
+            return this.name;
+        };
+        this.setWeight = function (weight) {
+            this.weight = prompt("Can nang: ");
+        };
+        this.getWeight = function (weight) {
+            return this.weight;
+        };
+        this.setGender = function (gender) {
+            this.gender = prompt("Nhap vao gioi tinh: ");
+        }
+        this.getGender = function () {
+            return this.gender;
+        };
+        this.say = function () {
+            console.log("Xin chao.Toi ten la: "+this.name);
+        };
+        this.showInfo = function () {
+            document.write("Ten: " +this.name+ "<br>"+
+            "Gioitinh: " +this.gender+"<br>"+
+            "Cannang: " + this.weight+ "kg"+
+            "<br>");
+        };
+        this.eat= function (Apple) {
+            if(confirm(time+"times: "+ this.name+ "an Tao ?")){
+                Apple.decrease();
+                Apple.getWeightApple();
+                this.weight++;
+                time++;
+            }
+            else {
+                 time++;
+                }
+        }
+    }
+
+    var apple = new Apple();
+    apple.setWeightApple(10);
+    var human1 = new Human();
+    human1.setName();
+    human1.setGender();
+    human1.setWeight();
+    human1.say();
+    human1.showInfo();
+    apple.checkApple();
+    var human2 = new Human();
+    human1.setName();
+    human1.setGender();
+    human1.setWeight();
+    human1.say();
+    human1.showInfo();
+    apple.checkApple();
+    while (apple.weightapple > 0) {
+        if (human1.eat(Apple)) {
+            document.write(time + " times: " + human1.name + " eat apple.Weight: " +
+                human1.weight + " kg" + "<br>" + "Apple weight: " + apple.getWeightApple() + " kg" + "<br>");
+        } else {
+            document.write(time + " times: " + human1.name + " not eat apple.Weight: " +
+                human1.weight + " kg" + "<br>" + "Apple weight: " + apple.getWeightApple() + " kg" + "<br>");
+        }
+
+        if (human2.eat(Apple)) {
+            document.write(time + " times: " + human2.name + " eat apple.Weight: " +
+                human2.weight + " kg" + "<br>" + "Apple weight: " + apple.getWeightApple() + " kg" + "<br>");
+        } else {
+            document.write(time + " times: " + human2.name + " not eat apple.Weight: " +
+                human2.weight + " kg" + "<br>" + "Apple weight: " + apple.getWeightApple() + " kg" + "<br>");
+        }
+    }
+    apple.checkApple();
+
+</script>
+</body>
+</html>
